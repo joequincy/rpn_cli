@@ -5,6 +5,7 @@ total = nil
 
 system "clear && printf '\e[3J'"
 puts "This calculator uses Reverse Polish Notation\n\
+(see http://mathworld.wolfram.com/ReversePolishNotation.html)\n\n\
 Enter each operand or operation on its own line, e.g.\n\
 1\n\
 2\n\
