@@ -1,4 +1,5 @@
 ops = ['+', '-', '*', '/']
+# Use an array as a stack of pending operands
 pending = []
 total = nil
 
