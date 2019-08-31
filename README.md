@@ -49,3 +49,7 @@ Once I understood the prompt correctly, the logic for running through the operat
 As of now, the user cannot reset the grand total. I would want to add support for a command like "c" to clear the total.
 
 I would also want to do some simple checks on unrecognized commands to provide better feedback. For example, if a user puts multiple numbers separated by a space or both an operand and an operator in a single input, I could have an error message reminding the user that the calculator only supports one operand or operator per line.
+
+It might also be nice to separately determine whether a user has input a float or an integer, then add the operand to the stack with the appropriate type. Operations would be performed as usual, with two exceptions:
+- If the operation is division, I would ensure one side was a float so that it didn't accidentally result in integer math rounding.
+- At the end of each operation, I would want to check if the result could be converted to an integer without losing precision. That way I could display the output of `6 3 /` as `2` instead of `2.0`.
