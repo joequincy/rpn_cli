@@ -10,11 +10,13 @@ Enter each operand or operation on its own line, e.g.\n\
 2\n\
 +  \e[32m(will output \"= 3\")\e[0m\n\n"
 
-puts "\n(enter \"q\" to exit)\e[2A"
+puts "\n(enter \"q\" to exit)\e[2A" # \e[nA moves the cursor up n line(s),
+# so this message will always appear immediately following the user's cursor,
+# and because we used "puts", it will be at the beginning of the line
 
 while input = gets.chomp
-  print "\033[2K"
   # Loop indefinitely, getting input from the user at the start of each loop
+  print "\033[2K" # Clears current line (now the line following user input)
   if input == "q"
     exit
   elsif ops.include? input
