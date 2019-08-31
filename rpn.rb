@@ -3,6 +3,13 @@ ops = ['+', '-', '*', '/']
 pending = []
 total = nil
 
+system "clear && printf '\e[3J'"
+puts "This calculator uses Reverse Polish Notation\n\
+Enter each operand or operation on its own line, e.g.\n\
+1\n\
+2\n\
++  \e[32m(will output \"= 3\")\e[0m\n\n"
+
 while input = gets.chomp
   # Loop indefinitely, getting input from the user at the start of each loop
   if input == "q"
