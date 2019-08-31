@@ -1,6 +1,9 @@
 ### Description
 Implements a CLI calculator which takes input in [Reverse Polish Notation](http://mathworld.wolfram.com/ReversePolishNotation.html). This project is a code challenge for a prospective employer.
 
+After cloning, run the calculator with
+`$ ruby rpn.rb`
+
 ### Approach
 I started by laying out the basic interaction pattern:
 - The core logic should loop indefinitely until the user inputs "q".
