@@ -4,6 +4,29 @@ Implements a CLI calculator which takes input in [Reverse Polish Notation](http:
 After cloning, run the calculator with
 `$ ruby rpn.rb`
 
+The calculator expects each operand and operator to be entered separately on its own line, e.g.
+```sh
+1
+2
++
+```
+The result will be printed on the next line preceded by an `=` sign, and will be used as the first operand in the next sequence.
+
+The following is the output from an example run.
+```sh
+1
+2
++
+= 3.0
+4
+5
+-
+= -1.0
++
+= 2.0
+```
+Expressed in one line, this would be `(1 + 2) + (4 - 5) = 2`
+
 ### Approach
 I started by laying out the basic interaction pattern:
 - The core logic should loop indefinitely until the user inputs "q".
