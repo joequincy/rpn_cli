@@ -2,14 +2,14 @@ ops = ['+', '-', '*', '/']
 pending = []
 total = nil
 
-# Loop indefinitely, getting input from the user at the start of each loop
 while input = gets.chomp
+  # Loop indefinitely, getting input from the user at the start of each loop
   if input == "q"
     exit
   elsif ops.include? input
     # The user has given a valid operation, so it's time to do some math.
-    if pending.empty?
-      puts "There are no numbers to operate upon."
+    if pending.empty? || (pending.count == 1 && total == nil)
+      puts "There must be at least 2 numbers to operate upon."
     else
       # Do math
     end
