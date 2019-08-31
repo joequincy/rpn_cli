@@ -40,9 +40,9 @@ while input = gets.chomp
         puts "= #{pending.last}"
       end
     end
-  elsif input.match? /^\d+$/
+  elsif input.match? /^\d+(\.\d+)?$/
     # If the input is a number, push it onto the pending stack
-    pending.push input.to_i
+    pending.push input.to_f
   else
     # We don't know how to handle the given input. We'll tell the user so they
     # have an idea what happened.
