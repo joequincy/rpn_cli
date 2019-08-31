@@ -10,7 +10,10 @@ Enter each operand or operation on its own line, e.g.\n\
 2\n\
 +  \e[32m(will output \"= 3\")\e[0m\n\n"
 
+puts "\n(enter \"q\" to exit)\e[2A"
+
 while input = gets.chomp
+  print "\033[2K"
   # Loop indefinitely, getting input from the user at the start of each loop
   if input == "q"
     exit
@@ -41,4 +44,5 @@ while input = gets.chomp
     # have an idea what happened.
     puts "\"#{input}\" is not a recognized input."
   end
+  puts "\n(enter \"q\" to exit)\e[2A"
 end
