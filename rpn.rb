@@ -11,7 +11,19 @@ while input = gets.chomp
     if pending.empty? || (pending.count == 1 && total == nil)
       puts "There must be at least 2 numbers to operate upon."
     else
-      # Do math
+      # Get right-side operand from end of stack
+      right = pending.pop
+      if pending.count == 0
+        # Nothing left in stack, so use total as left-side operand
+        total = total.send(input.to_sym, right)
+        puts "= #{total}"
+      else
+        # Replace next element in stack with the result of performing the
+        # operation using that element as the left side operand.
+        left = pending.pop
+        pending.push left.send(input.to_sym, right)
+        puts "= #{pending.last}"
+      end
     end
   elsif input.match? /^\d+$/
     # If the input is a number, push it onto the pending stack
